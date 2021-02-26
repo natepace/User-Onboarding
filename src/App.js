@@ -42,7 +42,7 @@ function App() {
     //    helper to [GET] all friends from `http://buddies.com/api/friends`
     axios.get(`https://reqres.in/api/users`)
     .then(res => {
-      setFriends(res.data)
+      setFriends(res.data.data)
     })
     .catch((err)=>{
       console.log(err)
@@ -128,44 +128,20 @@ function App() {
       // })}
       />
 
-    {/* {
-        friends.map(friend => {
+ 
+
+       <div>
+        {friends.map(friend => {
           return (
             <Friend key={friend.id} details={friend} />
           )
-        })
-      } */}
- 
+        })}
 
-{/* // </div> */}
-
-       <div>
-       {JSON.stringify(friends)}
-      </div> 
-      // {/* {
-      //   friends.map(friend => {
-      //     return (
-      //       <Friend key={friend.id} details={friend} />
-      //     )
-      //   })
-      // } */}
+     </div>
    
 </div>
 
-      // {/* <header className="App-header">
-      //   <img src={logo} className="App-logo" alt="logo" />
-      //   <p>
-      //     Edit <code>src/App.js</code> and save to reload.
-      //   </p>
-      //   <a
-      //     className="App-link"
-      //     href="https://reactjs.org"
-      //     target="_blank"
-      //     rel="noopener noreferrer"
-      //   >
-      //     Learn React
-      //   </a>
-      // </header> */}
+      
     
   );
 }
